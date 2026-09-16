@@ -225,6 +225,80 @@ def load_data():
 df = load_data()
 
 
+# ============================================================
+# NORMALIZE AGENT NAMES
+# ============================================================
+
+AGENT_NAME_MAP = {
+    "Abhishek_Ziraya": "Abhishek Ziraya",
+    "Aditi_Verma": "Aditi Verma",
+    "Adithya": "LV Adithya",
+    "Ayush_Ziraya": "Ayush Singh",
+    "Bandana": "Bandana Kumari Nagar",
+    "Chandra_Ziraya": "Chandra Bhushan",
+    'Chytanya':'Chytanya Netalkar',
+    "Debangi": "Debangi Majumder",
+    "Divya":"Divya Rashmi",
+    "Garv_Ziraya": "Garv Tandan",
+    'Garvit': 'Garvit Jat',
+    "Goresh_Ziraya": "Goresh Sharma",
+    "Iftekhar": "Iftekhar Alam",
+    "Jaya": "Jaya Prajapat",
+    "Jinson":"Jinson",
+    "Jiya": "Jiya Pandey",
+    "Krishna": "Krishna Kumar",
+    "Nameet": "Nameet Karadi",
+    "Namratha": "Namratha Chauhan",
+    "Omkar": "Omkar Kaktikar",
+    "Pawan_Ziraya": "Pawan Chahar",
+    "Pradeep": "Pradeep Bhandari",
+    "Pravesh": "Pravesh Singh",
+    "Preeti": "Preeti Tahilramani",
+    "Priya_Ziraya": "Priya Khanna",
+    "Priyanshi": "Priyanshi Kamal Das",
+    "Priyap": "Priyadharshini P",
+    "Rahaman": "Khan Rahaman",
+    'Rajeev':'Rajeev Ranjan',
+    "Rakshith": "Rakshith Pai",
+    "Rishabh": "Rishabh Singh",
+    "Rishabh_Ziraya": "Rishabh Kushwah",
+    "Rishi": "Rishi Sarkar",
+    "Ritik": "Ritik Raje",
+    "Sabiha": "Shaik Sabiha",
+    "Sagar_Ziraya": "Sagar Kumar",
+    "Saif_Ziraya": "Saif Khan",
+    "Shahbaz": "Shahbaz Mansoori",
+    "Shaik_Aleem": "Shaik Aleem",
+    'Simran':'Simran',
+    "Shreya_H": "Shreya Hari",
+    "Sweta":"Sweta Raj",
+    "Soumyajeet": "Soumyajeet Behera",
+    "Sourav": "Sourav Chowdhury",
+    "Sukanya_Kokate": "Sukanya Kokate",
+    "Supriya": "Supriya Raj",
+    "Umar": "Mohammad Umar Ali",
+    "Umar_Farooq": "Umar Farooq",
+    "Vanita_Hiremath": "Vanita Hiremath",
+    "Veervart_Karnwal": "Veervart Karnwal",
+    "Vibhanshu": "Vibhanshu Mishra",
+    "Vinay_Vyas": "Vinay Vyas",
+    "Vishal": "Vishal Gautam",
+    "Vishals": "Vishal Singh",
+    "Zain": "Zain Real",
+}
+
+
+if "agent_name" in df.columns:
+
+    df["agent_name"] = (
+        df["agent_name"]
+        .fillna("")
+        .astype(str)
+        .str.strip()
+        .replace(AGENT_NAME_MAP)
+    )
+
+
 if df.empty:
 
     st.warning(
@@ -232,7 +306,6 @@ if df.empty:
     )
 
     st.stop()
-
 
 # ============================================================
 # DATA CLEANING
