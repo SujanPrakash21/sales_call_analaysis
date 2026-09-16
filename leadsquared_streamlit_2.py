@@ -1105,10 +1105,13 @@ with ci_col1:
                 [
                     "",
                     "nan",
-                    "None"
+                    "None",
+                    "Unknown",
+                    "unknown"
                 ],
-                "Unknown"
+                pd.NA
             )
+            .dropna()
             .value_counts()
             .reset_index()
         )
