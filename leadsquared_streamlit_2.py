@@ -365,6 +365,7 @@ AGENT_NAME_MAP = {
 
     "Preeti": "Preeti Tahilramani",
 
+    "Priya": "Priya Khanna",
     "Priya_Ziraya": "Priya Khanna",
 
     "Priyanshi": "Priyanshi Kamal Das",
@@ -390,6 +391,7 @@ AGENT_NAME_MAP = {
     "Sagar": "Sagar Kumar",
     "Sagar_Ziraya": "Sagar Kumar",
 
+    "Saif": "Saif Khan",
     "Saif_Ziraya": "Saif Khan",
 
     "Shahbaz": "Shahbaz Mansoori",
@@ -412,6 +414,7 @@ AGENT_NAME_MAP = {
     "Sweta":"Sweta Raj",
     "Sweta_Raj": "Sweta Raj",
 
+    "Sukanya": "Sukanya Kokate",
     "Sukanya_Kokate": "Sukanya Kokate",
 
     "Supriya": "Supriya Raj",
