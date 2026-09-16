@@ -229,61 +229,200 @@ df = load_data()
 # NORMALIZE AGENT NAMES
 # ============================================================
 
+# AGENT_NAME_MAP = {
+#     "Abhishek_Ziraya": "Abhishek Ziraya",
+#     "Aditi_Verma": "Aditi Verma",
+#     "Adithya": "LV Adithya",
+#     "Ayush_Ziraya": "Ayush Singh",
+#     "Bandana": "Bandana Kumari Nagar",
+#     "Chandra_Ziraya": "Chandra Bhushan",
+#     'Chytanya':'Chytanya Netalkar',
+#     "Debangi": "Debangi Majumder",
+#     "Divya":"Divya Rashmi",
+#     "Garv_Ziraya": "Garv Tandan",
+#     'Garvit': 'Garvit Jat',
+#     "Goresh_Ziraya": "Goresh Sharma",
+#     "Iftekhar": "Iftekhar Alam",
+#     "Jaya": "Jaya Prajapat",
+#     "Jinson":"Jinson",
+#     "Jiya": "Jiya Pandey",
+#     "Krishna": "Krishna Kumar",
+#     "Nameet": "Nameet Karadi",
+#     "Namratha": "Namratha Chauhan",
+#     "Omkar": "Omkar Kaktikar",
+#     "Pawan_Ziraya": "Pawan Chahar",
+#     "Pradeep": "Pradeep Bhandari",
+#     "Pravesh": "Pravesh Singh",
+#     "Preeti": "Preeti Tahilramani",
+#     "Priya_Ziraya": "Priya Khanna",
+#     "Priyanshi": "Priyanshi Kamal Das",
+#     "Priyap": "Priyadharshini P",
+#     "Rahaman": "Khan Rahaman",
+#     'Rajeev':'Rajeev Ranjan',
+#     "Rakshith": "Rakshith Pai",
+#     "Rishabh": "Rishabh Singh",
+#     "Rishabh_Ziraya": "Rishabh Kushwah",
+#     "Rishi": "Rishi Sarkar",
+#     "Ritik": "Ritik Raje",
+#     "Sabiha": "Shaik Sabiha",
+#     "Sagar_Ziraya": "Sagar Kumar",
+#     "Saif_Ziraya": "Saif Khan",
+#     "Shahbaz": "Shahbaz Mansoori",
+#     "Shaik_Aleem": "Shaik Aleem",
+#     'Simran':'Simran',
+#     "Shreya_H": "Shreya Hari",
+#     "Sweta":"Sweta Raj",
+#     "Soumyajeet": "Soumyajeet Behera",
+#     "Sourav": "Sourav Chowdhury",
+#     "Sukanya_Kokate": "Sukanya Kokate",
+#     "Supriya": "Supriya Raj",
+#     "Umar": "Mohammad Umar Ali",
+#     "Umar_Farooq": "Umar Farooq",
+#     "Vanita_Hiremath": "Vanita Hiremath",
+#     "Veervart_Karnwal": "Veervart Karnwal",
+#     "Vibhanshu": "Vibhanshu Mishra",
+#     "Vinay_Vyas": "Vinay Vyas",
+#     "Vishal": "Vishal Gautam",
+#     "Vishals": "Vishal Singh",
+#     "Zain": "Zain Real",
+# }
+
 AGENT_NAME_MAP = {
+
     "Abhishek_Ziraya": "Abhishek Ziraya",
+
+    "Aditi": "Aditi Verma",
     "Aditi_Verma": "Aditi Verma",
+
     "Adithya": "LV Adithya",
+
+    "Akash_Harkude": "Akash Harkude",
+
+    "Ayush": "Ayush Singh",
     "Ayush_Ziraya": "Ayush Singh",
+
     "Bandana": "Bandana Kumari Nagar",
+
+    "Chandra": "Chandra Bhushan",
     "Chandra_Ziraya": "Chandra Bhushan",
-    'Chytanya':'Chytanya Netalkar',
+
+    "Chytanya": "Chytanya Netalkar",
+
     "Debangi": "Debangi Majumder",
-    "Divya":"Divya Rashmi",
+
+    "Divya": "Divya Rashmi",
+
+    "Garv": "Garv Tandan",
     "Garv_Ziraya": "Garv Tandan",
-    'Garvit': 'Garvit Jat',
+
+    "Garvit": "Garvit Jat",
+
+    "Goresh": "Goresh Sharma",
     "Goresh_Ziraya": "Goresh Sharma",
+
     "Iftekhar": "Iftekhar Alam",
+
+    "Imdad": "Imdad P",
+    "Imdad_P": "Imdad P",
+
+    "Izaz": "Izaz Ahmed",
+
     "Jaya": "Jaya Prajapat",
-    "Jinson":"Jinson",
+
+    "Jinson": "Jinson",
+
     "Jiya": "Jiya Pandey",
+
     "Krishna": "Krishna Kumar",
+
     "Nameet": "Nameet Karadi",
+
     "Namratha": "Namratha Chauhan",
+
+    "Akash": "Akash Harkude",
+    "Akash_Harkude": "Akash Harkude",
+
+    "Ayan": "Ayan Dey",
+    "Ayan_Dey": "Ayan Dey",
+
+    "Manan": "Manan Shah",
+    "Manan_Shah": "Manan Shah",
+
+    "Mayank": "Mayank Biswas",
+    "Mayank_Biswas": "Mayank Biswas",
+
     "Omkar": "Omkar Kaktikar",
+
     "Pawan_Ziraya": "Pawan Chahar",
+
     "Pradeep": "Pradeep Bhandari",
+
     "Pravesh": "Pravesh Singh",
+
     "Preeti": "Preeti Tahilramani",
+
     "Priya_Ziraya": "Priya Khanna",
+
     "Priyanshi": "Priyanshi Kamal Das",
+
     "Priyap": "Priyadharshini P",
+
     "Rahaman": "Khan Rahaman",
-    'Rajeev':'Rajeev Ranjan',
+
+    "Rajeev": "Rajeev Ranjan",
+
     "Rakshith": "Rakshith Pai",
+
     "Rishabh": "Rishabh Singh",
+
     "Rishabh_Ziraya": "Rishabh Kushwah",
+
     "Rishi": "Rishi Sarkar",
+
     "Ritik": "Ritik Raje",
+
     "Sabiha": "Shaik Sabiha",
+
+    "Sagar": "Sagar Kumar",
     "Sagar_Ziraya": "Sagar Kumar",
+
     "Saif_Ziraya": "Saif Khan",
+
     "Shahbaz": "Shahbaz Mansoori",
+
     "Shaik_Aleem": "Shaik Aleem",
-    'Simran':'Simran',
+
+    "Simran": "Simran",
+
     "Shreya_H": "Shreya Hari",
-    "Sweta":"Sweta Raj",
+
     "Soumyajeet": "Soumyajeet Behera",
+
     "Sourav": "Sourav Chowdhury",
+
     "Sukanya_Kokate": "Sukanya Kokate",
+
     "Supriya": "Supriya Raj",
+
     "Umar": "Mohammad Umar Ali",
+
     "Umar_Farooq": "Umar Farooq",
+
+    "Vanita": "Vanita Hiremath",
     "Vanita_Hiremath": "Vanita Hiremath",
+
+    "Veervart": "Veervart Karnwal",
     "Veervart_Karnwal": "Veervart Karnwal",
+
     "Vibhanshu": "Vibhanshu Mishra",
+
+    "Vinay": "Vinay Vyas",
     "Vinay_Vyas": "Vinay Vyas",
+
     "Vishal": "Vishal Gautam",
+
     "Vishals": "Vishal Singh",
+
     "Zain": "Zain Real",
 }
 
