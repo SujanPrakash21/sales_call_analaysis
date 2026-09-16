@@ -399,7 +399,7 @@ AGENT_NAME_MAP = {
 
     "Sibajit": "Sibajit Gope",
     "Sibajit_Gope": "Sibajit Gope",
-    
+
     "Simran": "Simran",
 
     "Shreya": "Shreya Hari",
@@ -408,6 +408,9 @@ AGENT_NAME_MAP = {
     "Soumyajeet": "Soumyajeet Behera",
 
     "Sourav": "Sourav Chowdhury",
+
+    "Sweta":"Sweta Raj",
+    "Sweta_Raj": "Sweta Raj",
 
     "Sukanya_Kokate": "Sukanya Kokate",
 
