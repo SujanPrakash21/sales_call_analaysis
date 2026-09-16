@@ -289,6 +289,8 @@ df = load_data()
 
 AGENT_NAME_MAP = {
 
+    "Abhishek": "Abhishek Ziraya",
+
     "Abhishek_Ziraya": "Abhishek Ziraya",
 
     "Aditi": "Aditi Verma",
@@ -325,6 +327,7 @@ AGENT_NAME_MAP = {
     "Imdad": "Imdad P",
     "Imdad_P": "Imdad P",
 
+    "Izaz_Ahmed": "Izaz Ahmed",
     "Izaz": "Izaz Ahmed",
 
     "Jaya": "Jaya Prajapat",
@@ -353,6 +356,7 @@ AGENT_NAME_MAP = {
 
     "Omkar": "Omkar Kaktikar",
 
+    "Pawan": "Pawan Chahar",
     "Pawan_Ziraya": "Pawan Chahar",
 
     "Pradeep": "Pradeep Bhandari",
@@ -390,10 +394,15 @@ AGENT_NAME_MAP = {
 
     "Shahbaz": "Shahbaz Mansoori",
 
+    "Shaik":"Shaik Aleem",
     "Shaik_Aleem": "Shaik Aleem",
 
+    "Sibajit": "Sibajit Gope",
+    "Sibajit_Gope": "Sibajit Gope",
+    
     "Simran": "Simran",
 
+    "Shreya": "Shreya Hari",
     "Shreya_H": "Shreya Hari",
 
     "Soumyajeet": "Soumyajeet Behera",
