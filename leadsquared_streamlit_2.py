@@ -3019,12 +3019,15 @@ if page == "📊 Overview":
     )
 
 
-    c1, c2, c3, c4, c5 = st.columns(5)
+    c0, c1, c2, c3, c4, c5 = st.columns(6)
 
 
     # ------------------------------------------------------------
     # ANALYZED CALLS
     # ------------------------------------------------------------
+
+    with c0:
+        st.metric("total Calls", len(filtered_df))
 
     with c1:
 
