@@ -2347,6 +2347,9 @@ AGENT_NAME_MAP = {
 
     "Adithya": "LV Adithya",
 
+    "Adnan": "Adnan",
+    "Adnan_Kaif": "Adnan Kaif",
+
     "Akash_Harkude": "Akash Harkude",
 
     "Ayush": "Ayush Singh",
@@ -2387,6 +2390,11 @@ AGENT_NAME_MAP = {
 
     "Krishna": "Krishna Kumar",
 
+    "Kayum": "Kayum",
+
+    "Mohammed": "Mohammed Zeeshan",
+    "Mohammed_Zeeshan": "Mohammed Zeeshan",
+
     "Nameet": "Nameet Karadi",
 
     "Namratha": "Namratha Chauhan",
@@ -2412,6 +2420,8 @@ AGENT_NAME_MAP = {
 
     "Pravesh": "Pravesh Singh",
 
+    "Prathamsinha": "Pratham Sinha",
+
     "Preeti": "Preeti Tahilramani",
 
     "Priya": "Priya Khanna",
@@ -2420,6 +2430,8 @@ AGENT_NAME_MAP = {
     "Priyanshi": "Priyanshi Kamal Das",
 
     "Priyap": "Priyadharshini P",
+
+    "Puja": "Puja",
 
     "Rahaman": "Khan Rahaman",
 
