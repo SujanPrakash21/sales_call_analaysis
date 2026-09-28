@@ -2347,8 +2347,8 @@ AGENT_NAME_MAP = {
 
     "Adithya": "LV Adithya",
 
-    "Adnan": "Adnan",
-    "Adnan_Kaif": "Adnan Kaif",
+    "Adnan": "Adnan Kaify",
+    "Adnan_Kaify": "Adnan Kaify",
 
     "Akash_Harkude": "Akash Harkude",
 
