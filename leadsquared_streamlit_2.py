@@ -2585,9 +2585,22 @@ if "agent_name" in df.columns:
         .replace(AGENT_NAME_MAP)
     )
 
+# def get_team_leader(agent_name):
+
+#     for leader, members in TEAM_MAP.items():
+
+#         if agent_name in members:
+#             return leader
+
+#     return "Unmapped"
+
+
 def get_team_leader(agent_name):
 
     for leader, members in TEAM_MAP.items():
+
+        if agent_name == leader:
+            return leader
 
         if agent_name in members:
             return leader
