@@ -2527,7 +2527,7 @@ TEAM_MAP = {
         "Shahbaz Mansoori",
     ],
 
-    "Krishna": [
+    "Krishna Kumar": [
         "Bandana Kumari Nagar",
         "Jiya Pandey",
         "Priyanshi Kamal Das",
