@@ -4333,24 +4333,23 @@ elif page == "👥 Team Performance":
 
             if leader == "Unmapped":
 
-                mapped_members = [
-                    member
-                    for members in TEAM_MAP.values()
-                    for member in members
-                ]
+                # Include both team leaders and team members
+                mapped_members = set(TEAM_MAP.keys())
+
+                for members in TEAM_MAP.values():
+                    mapped_members.update(members)
 
                 unmapped_members = [
                     member
                     for member in team_filtered_df["agent_name"]
                     .dropna()
                     .astype(str)
+                    .str.strip()
                     .unique()
                     if member not in mapped_members
                 ]
 
-                selected_members.extend(
-                    unmapped_members
-                )
+                selected_members.extend(unmapped_members)
 
             else:
 
