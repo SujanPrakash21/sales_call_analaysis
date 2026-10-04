@@ -2062,10 +2062,14 @@ SHEET_ID = (
     "1bpyB0aXUiUGA0j5OwiEXMtifLnvE1dU-nKHR7COgxcY"
 )
 
-SHEET_NAME = (
-    "September 2026"
-)
+# SHEET_NAME = (
+#     "September 2026"
+# )
 
+SHEET_NAMES = [
+    "September 2026",
+    "October 2026"
+]
 
 st.set_page_config(
     page_title="Sales Call Analytics",
@@ -2164,99 +2168,185 @@ NUMERIC_SCORE_COLUMNS = [
 # GOOGLE SHEET CONNECTION
 # ============================================================
 
+# @st.cache_data(ttl=300)
+# def load_data():
+
+#     credentials = (
+#         Credentials.from_service_account_info(
+#             GCP_CREDS,
+#             scopes=[
+#                 "https://www.googleapis.com/auth/spreadsheets"
+#             ]
+#         )
+#     )
+
+#     client = gspread.authorize(
+#         credentials
+#     )
+
+#     spreadsheet = client.open_by_key(
+#         SHEET_ID
+#     )
+
+#     worksheet = spreadsheet.worksheet(
+#         SHEET_NAME
+#     )
+
+#     # --------------------------------------------------------
+#     # READ SHEET
+#     # --------------------------------------------------------
+
+#     values = worksheet.get_all_values()
+
+#     if not values:
+
+#         return pd.DataFrame()
+
+#     headers = [
+#         str(header).strip()
+#         for header in values[0]
+#     ]
+
+#     rows = values[1:]
+
+#     # --------------------------------------------------------
+#     # MAKE ROW LENGTH MATCH HEADER LENGTH
+#     # --------------------------------------------------------
+
+#     cleaned_rows = []
+
+#     for row in rows:
+
+#         row = list(row)
+
+#         if len(row) < len(headers):
+
+#             row.extend(
+#                 [""] * (
+#                     len(headers) - len(row)
+#                 )
+#             )
+
+#         elif len(row) > len(headers):
+
+#             row = row[
+#                 :len(headers)
+#             ]
+
+#         cleaned_rows.append(
+#             row
+#         )
+
+#     df = pd.DataFrame(
+#         cleaned_rows,
+#         columns=headers
+#     )
+
+#     # ========================================================
+#     # REMOVE DUPLICATE COLUMN HEADERS
+#     # ========================================================
+
+#     if df.columns.duplicated().any():
+
+#         duplicate_columns = (
+#             df.columns[
+#                 df.columns.duplicated()
+#             ]
+#             .tolist()
+#         )
+
+#         print(
+#             "Duplicate columns found:",
+#             duplicate_columns
+#         )
+
+#         # Keep the first occurrence
+#         df = df.loc[
+#             :,
+#             ~df.columns.duplicated(
+#                 keep="first"
+#             )
+#         ]
+
+#     return df
+
+
 @st.cache_data(ttl=300)
 def load_data():
 
-    credentials = (
-        Credentials.from_service_account_info(
-            GCP_CREDS,
-            scopes=[
-                "https://www.googleapis.com/auth/spreadsheets"
+    credentials = Credentials.from_service_account_info(
+        GCP_CREDS,
+        scopes=[
+            "https://www.googleapis.com/auth/spreadsheets"
+        ]
+    )
+
+    client = gspread.authorize(credentials)
+
+    spreadsheet = client.open_by_key(SHEET_ID)
+
+    all_dfs = []
+
+    for sheet_name in SHEET_NAMES:
+
+        try:
+            worksheet = spreadsheet.worksheet(sheet_name)
+
+            values = worksheet.get_all_values()
+
+            if not values:
+                continue
+
+            headers = [
+                str(header).strip()
+                for header in values[0]
             ]
-        )
-    )
 
-    client = gspread.authorize(
-        credentials
-    )
+            rows = values[1:]
 
-    spreadsheet = client.open_by_key(
-        SHEET_ID
-    )
+            cleaned_rows = []
 
-    worksheet = spreadsheet.worksheet(
-        SHEET_NAME
-    )
+            for row in rows:
 
-    # --------------------------------------------------------
-    # READ SHEET
-    # --------------------------------------------------------
+                row = list(row)
 
-    values = worksheet.get_all_values()
+                if len(row) < len(headers):
+                    row.extend(
+                        [""] * (len(headers) - len(row))
+                    )
 
-    if not values:
+                elif len(row) > len(headers):
+                    row = row[:len(headers)]
 
-        return pd.DataFrame()
+                cleaned_rows.append(row)
 
-    headers = [
-        str(header).strip()
-        for header in values[0]
-    ]
-
-    rows = values[1:]
-
-    # --------------------------------------------------------
-    # MAKE ROW LENGTH MATCH HEADER LENGTH
-    # --------------------------------------------------------
-
-    cleaned_rows = []
-
-    for row in rows:
-
-        row = list(row)
-
-        if len(row) < len(headers):
-
-            row.extend(
-                [""] * (
-                    len(headers) - len(row)
-                )
+            sheet_df = pd.DataFrame(
+                cleaned_rows,
+                columns=headers
             )
 
-        elif len(row) > len(headers):
+            all_dfs.append(sheet_df)
 
-            row = row[
-                :len(headers)
-            ]
+            print(
+                f"Loaded {sheet_name}: {len(sheet_df)} rows"
+            )
 
-        cleaned_rows.append(
-            row
-        )
+        except gspread.exceptions.WorksheetNotFound:
 
-    df = pd.DataFrame(
-        cleaned_rows,
-        columns=headers
+            print(
+                f"Worksheet not found: {sheet_name}"
+            )
+
+    if not all_dfs:
+        return pd.DataFrame()
+
+    df = pd.concat(
+        all_dfs,
+        ignore_index=True
     )
-
-    # ========================================================
-    # REMOVE DUPLICATE COLUMN HEADERS
-    # ========================================================
 
     if df.columns.duplicated().any():
 
-        duplicate_columns = (
-            df.columns[
-                df.columns.duplicated()
-            ]
-            .tolist()
-        )
-
-        print(
-            "Duplicate columns found:",
-            duplicate_columns
-        )
-
-        # Keep the first occurrence
         df = df.loc[
             :,
             ~df.columns.duplicated(
@@ -2265,7 +2355,6 @@ def load_data():
         ]
 
     return df
-
 
 # ============================================================
 # LOAD DATA
