@@ -2654,14 +2654,14 @@ TEAM_MAP = {
         "Veervart Karnwal",
     ],
 
-    "New Joinees": [
-        "Ayan Dey",
-        "Izaz Ahmed",
-        "Manan Shah",
-        "Imdad P",
-        "Pratham Sinha",
-        "Akash Shelar",
-    ],
+    # "New Joinees": [
+    #     "Ayan Dey",
+    #     "Izaz Ahmed",
+    #     "Manan Shah",
+    #     "Imdad P",
+    #     "Pratham Sinha",
+    #     "Akash Shelar",
+    # ],
 }
 
 if "agent_name" in df.columns:
