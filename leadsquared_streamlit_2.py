@@ -2441,6 +2441,8 @@ AGENT_NAME_MAP = {
 
     "Akash_Harkude": "Akash Harkude",
 
+    "Aryan_Sahu" : "Aryan Sahu",
+    
     "Ayush": "Ayush Singh",
     "Ayush_Ziraya": "Ayush Singh",
 
@@ -2465,6 +2467,8 @@ AGENT_NAME_MAP = {
 
     "Iftekhar": "Iftekhar Alam",
 
+    "Irfan_S": "Irfan S",
+
     "Imdad": "Imdad P",
     "Imdad_P": "Imdad P",
 
@@ -2480,6 +2484,8 @@ AGENT_NAME_MAP = {
     "Krishna": "Krishna Kumar",
 
     "Kayum": "Kayum",
+
+    "Kaushal_Kishor": "Kaushal Kishor",
 
     "Mohammed": "Mohammed Zeeshan",
     "Mohammed_Zeeshan": "Mohammed Zeeshan",
@@ -2592,76 +2598,57 @@ AGENT_NAME_MAP = {
 }
 
 TEAM_MAP = {
-
-    "Divya Rashmi": [
-        "LV Adithya",
-        "Aditi Verma",
-        "Jinson",
-        "Pravesh Singh",
-        "Preeti Tahilramani",
-        "Shreya Hari",
-        "Supriya Raj",
-        "Rishi Sarkar",
-    ],
-
-    "Harish": [
-        "Ayush Singh",
-        "Garv Tandan",
-        "Jaya Prajapat",
-        "Priya Khanna",
-        "Rajeev Ranjan",
-        "Rishabh Kushwah",
-        "Sagar Kumar",
-        "Saif Khan",
-        "Shahbaz Mansoori",
-    ],
-
-    "Krishna Kumar": [
-        "Bandana Kumari Nagar",
-        "Jiya Pandey",
-        "Priyanshi Kamal Das",
-        "Rishabh Singh",
-        "Soumyajeet Behera",
-        "Mohammad Umar Ali",
-        "Vishal Gautam",
-        "Zain Real",
-        "Vanita Hiremath",
-        "Sukanya Kokate",
-        "Puja",
-    ],
-
     "Garvit": [
-        "Chytanya Netalkar",
+        "Ritik Raje",
         "Iftekhar Alam",
         "Khan Rahaman",
+        "Soumyajeet Behera",
+        "Zain Real",
+        "Priyadharshini P",
+        "Sourav Chowdhury",
+        "Aditi Verma",
+        "Shreya Hari",
+    ],
+
+    "Krishna": [
+        "Priyanshi Kamal Das",
+        "Jiya Pandey",
         "Nameet Karadi",
-        "Omkar Kaktikar",
-        "Ritik Raje",
-        "Umar Farooq",
-        "Vibhanshu Mishra",
+        "Rishabh Singh",
         "Vishal Singh",
-        "Sibajit Gope",
-        "Mayank Biswas",
+        "Mohammad Umar Ali",
+        "LV Adithya",
+    ],
+
+    "Priya": [
+        "Izaz Ahmed",
+        "Rishi Sarkar",
+        "Imdad P",
+        "Akash Harkude",
     ],
 
     "Rakshith": [
-        "Namratha Chauhan",
-        "Priyadharshini P",
-        "Rakshith Pai",
-        "Sourav Chowdhury",
+        "Omkar Kaktikar",
+        "Umar Farooq",
+        "Mayank Biswas",
+        "Sibajit Gope",
+        "Puja",
+        "Vishal Gautam",
+        "Manan Shah",
         "Vinay Vyas",
+        "Supriya Raj",
+        "Jinson",
         "Shaik Aleem",
-        "Veervart Karnwal",
     ],
 
-    # "New Joinees": [
-    #     "Ayan Dey",
-    #     "Izaz Ahmed",
-    #     "Manan Shah",
-    #     "Imdad P",
-    #     "Pratham Sinha",
-    #     "Akash Shelar",
-    # ],
+    "Pravesh Singh": [
+        "Adnan Kaify",
+        "Kayum",
+        "Mohammed Zeeshan",
+        "Aryan Sahu",
+        "Irfan S",
+        "Kaushal Kishor",
+    ],
 }
 
 if "agent_name" in df.columns:
