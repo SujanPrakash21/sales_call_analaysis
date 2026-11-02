@@ -26,7 +26,7 @@ st.set_page_config(
 GCP_CREDS = dict(st.secrets["gcp_service_account"])
 
 SHEET_ID = "1bpyB0aXUiUGA0j5OwiEXMtifLnvE1dU-nKHR7COgxcY"
-SHEET_NAMES = ["September 2026", "October 2026"]
+SHEET_NAMES = ["September 2026", "October 2026", "November 2026"]
 
 BLUE = "#3975EF"
 GREEN = "#16A37A"
