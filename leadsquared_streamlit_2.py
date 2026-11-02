@@ -624,10 +624,35 @@ def prepare(raw):
     df["agent_name"] = clean(df["agent_name"]).replace(NAME_MAP)
     df["team_leader"] = df["agent_name"].map(TEAM_LOOKUP).fillna("Ziraya")
 
+    # df["call_datetime"] = pd.to_datetime(
+    #     df["call_datetime"], errors="coerce", format="mixed"
+    # )
+    # df["date"] = df["call_datetime"].dt.date
+
+
+    # Parse full call datetime
     df["call_datetime"] = pd.to_datetime(
-        df["call_datetime"], errors="coerce", format="mixed"
+        df["call_datetime"],
+        errors="coerce",
+        format="mixed"
     )
+
+    # Fallback to call_date when call_datetime is missing or invalid
+    if "call_date" in df.columns:
+        fallback_dates = pd.to_datetime(
+            df["call_date"],
+            errors="coerce",
+            format="mixed",
+            dayfirst=False
+        )
+
+        df["call_datetime"] = df["call_datetime"].fillna(
+            fallback_dates
+        )
+
+    # Final date for dashboard filters
     df["date"] = df["call_datetime"].dt.date
+
 
     for col in list(SCORE_COLUMNS) + ["propensity_score", "mistake_count"]:
         df[col] = pd.to_numeric(df[col], errors="coerce")
